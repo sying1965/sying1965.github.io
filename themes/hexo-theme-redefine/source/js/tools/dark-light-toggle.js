@@ -12,8 +12,8 @@ REDEFINE.initModeToggle = () => {
     
 
     enableLightMode() {
-      document.body.classList.remove('dark-mode');
-      document.body.classList.add('light-mode');
+      document.body?.classList.remove('dark-mode');
+      document.body?.classList.add('light-mode');
       this.iconDom.className = 'fa-regular fa-moon';
       REDEFINE.styleStatus.isDark = false;
       REDEFINE.setStyleStatus();
@@ -21,8 +21,8 @@ REDEFINE.initModeToggle = () => {
     },
 
     enableDarkMode() {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
+      document.body?.classList.add('dark-mode');
+      document.body?.classList.remove('light-mode');
       this.iconDom.className = 'fa-regular fa-sun';
       REDEFINE.styleStatus.isDark = true;
       REDEFINE.setStyleStatus();
@@ -61,7 +61,7 @@ REDEFINE.initModeToggle = () => {
 
     initModeToggleButton() {
       this.modeToggleButton_dom.addEventListener('click', () => {
-        const isDark = document.body.classList.contains('dark-mode');
+        const isDark = document.body?.classList.contains('dark-mode');
         isDark ? this.enableLightMode() : this.enableDarkMode();
       });
     },

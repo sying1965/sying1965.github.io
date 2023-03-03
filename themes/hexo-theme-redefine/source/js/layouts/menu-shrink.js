@@ -13,11 +13,11 @@ REDEFINE.initMenuShrink = () => {
 
       if (!this.isMenuShrink && scrollTop > this.menuHeight) {
         this.isMenuShrink = true;
-        document.body.classList.add('menu-shrink');
+        document.body?.classList.add('menu-shrink');
         
       } else if (this.isMenuShrink && scrollTop <= this.menuHeight) {
         this.isMenuShrink = false;
-        document.body.classList.remove('menu-shrink');
+        document.body?.classList.remove('menu-shrink');
       }
 
     },
@@ -31,7 +31,7 @@ REDEFINE.initMenuShrink = () => {
 
       domList.forEach(v => {
         v.addEventListener('click', () => {
-          document.body.classList.toggle('menu-drawer-show');
+          document.body?.classList.toggle('menu-drawer-show');
         });
       });
     }

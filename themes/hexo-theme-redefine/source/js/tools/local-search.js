@@ -249,7 +249,7 @@ REDEFINE.initLocalSearch = () => {
   document.querySelectorAll('.search-popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
       document.body.style.overflow = 'hidden';
-      document.querySelector('.search-pop-overlay').classList.add('active');
+      document.querySelector('.search-pop-overlay')?.classList.add('active');
       setTimeout(() => searchInputDom.focus(), 500);
       if (!isfetched) fetchData();
     });
@@ -258,7 +258,7 @@ REDEFINE.initLocalSearch = () => {
   // Monitor main search box
   const onPopupClose = () => {
     document.body.style.overflow = '';
-    document.querySelector('.search-pop-overlay').classList.remove('active');
+    document.querySelector('.search-pop-overlay')?.classList.remove('active');
   };
 
   document.querySelector('.search-pop-overlay').addEventListener('click', event => {

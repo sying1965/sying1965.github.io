@@ -17,7 +17,7 @@ function mermaidDarkInit() {
 }
 
 function checkModeStatus() {
-    if (document.body.classList.contains('dark-mode')) {
+    if (document.body?.classList.contains('dark-mode')) {
         mermaidDarkInit();
     } else {
         mermaidLightInit();

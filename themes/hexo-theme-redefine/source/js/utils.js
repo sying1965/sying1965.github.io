@@ -47,18 +47,18 @@ REDEFINE.initUtils = () => {
       if (this.isHasScrollPercent) {
         const percent_dom = this.backToTopButton_dom.querySelector(".percent");
         if (percent === 0 || percent === undefined) {
-          this.backToTopButton_dom.classList.remove("show");
+          this.backToTopButton_dom?.classList.remove("show");
         } else {
-          this.backToTopButton_dom.classList.add("show");
+          this.backToTopButton_dom?.classList.add("show");
           percent_dom.innerHTML = percent.toFixed(0);
         }
       }
 
       // hide menu handle
       if (scrollTop > this.prevScrollValue && scrollTop > this.innerHeight) {
-        this.pageTop_dom.classList.remove("hide");
+        this.pageTop_dom?.classList.remove("hide");
       } else {
-        this.pageTop_dom.classList.remove("hide");
+        this.pageTop_dom?.classList.remove("hide");
       }
       this.prevScrollValue = scrollTop;
     },
@@ -94,12 +94,12 @@ REDEFINE.initUtils = () => {
             if (location.pathname !== '/') {
               //console.log(location.pathname)
             } else {
-              tools.classList.add('hide');
+              tools?.classList.add('hide');
             }
           } else if (y + windowHeight >= height - 20) {
-            tools.classList.add('hide');
+            tools?.classList.add('hide');
           } else {
-            tools.classList.remove('hide');
+            tools?.classList.remove('hide');
           }
         }
 
@@ -108,12 +108,12 @@ REDEFINE.initUtils = () => {
           if (location.pathname !== '/') {
             //console.log(location.pathname)
           } else {
-            aplayer.classList.add('hide');
+            aplayer?.classList.add('hide');
           }
         } else if (y + windowHeight >= height - 20) {
-          aplayer.classList.add('hide');
+          aplayer?.classList.add('hide');
         } else {
-          aplayer.classList.remove('hide');
+          aplayer?.classList.remove('hide');
         }
       });
     },
@@ -125,7 +125,7 @@ REDEFINE.initUtils = () => {
         .addEventListener("click", () => {
           document
             .querySelector(".unfolded-tools-list")
-            .classList.toggle("show");
+            ?.classList.toggle("show");
         });
     },
 
@@ -196,13 +196,13 @@ REDEFINE.initUtils = () => {
         REDEFINE.styleStatus.isExpandPageWidth = isExpand;
         REDEFINE.setStyleStatus();
         if (isExpand) {
-          iconDom.classList.remove("fa-expand");
-          iconDom.classList.add("fa-compress");
+          iconDom?.classList.remove("fa-expand");
+          iconDom?.classList.add("fa-compress");
           menuContentDom.style.maxWidth = expandMaxWidth;
           mainContentDom.style.maxWidth = expandMaxWidth;
         } else {
-          iconDom.classList.remove("fa-compress");
-          iconDom.classList.add("fa-expand");
+          iconDom?.classList.remove("fa-compress");
+          iconDom?.classList.add("fa-expand");
           menuContentDom.style.maxWidth = menuMaxWidth;
           mainContentDom.style.maxWidth = defaultMaxWidth;
         }
@@ -272,9 +272,9 @@ REDEFINE.initUtils = () => {
       const showHandle = (maskDom, isShow) => {
         document.body.style.overflow = isShow ? "hidden" : "auto";
         if (isShow) {
-          maskDom.classList.add("active");
+          maskDom?.classList.add("active");
         } else {
-          maskDom.classList.remove("active");
+          maskDom?.classList.remove("active");
         }
       };
 
@@ -370,16 +370,16 @@ REDEFINE.initUtils = () => {
     pjaxProgressBarStart() {
       this.pjaxProgressBarTimer && clearInterval(this.pjaxProgressBarTimer);
       if (this.isHasScrollProgressBar) {
-        this.scrollProgressBar_dom.classList.add("hide");
+        this.scrollProgressBar_dom?.classList.add("hide");
       }
 
       this.pjaxProgressBar_dom.style.width = "0";
-      this.pjaxProgressIcon_dom.classList.add("show");
+      this.pjaxProgressIcon_dom?.classList.add("show");
 
       let width = 1;
       const maxWidth = 99;
 
-      this.pjaxProgressBar_dom.classList.add("show");
+      this.pjaxProgressBar_dom?.classList.add("show");
       this.pjaxProgressBar_dom.style.width = width + "%";
 
       this.pjaxProgressBarTimer = setInterval(() => {
@@ -395,11 +395,11 @@ REDEFINE.initUtils = () => {
       this.pjaxProgressBar_dom.style.width = "100%";
 
       const temp_1 = setTimeout(() => {
-        this.pjaxProgressBar_dom.classList.remove("show");
-        this.pjaxProgressIcon_dom.classList.remove("show");
+        this.pjaxProgressBar_dom?.classList.remove("show");
+        this.pjaxProgressIcon_dom?.classList.remove("show");
 
         if (this.isHasScrollProgressBar) {
-          this.scrollProgressBar_dom.classList.remove("hide");
+          this.scrollProgressBar_dom?.classList.remove("hide");
         }
 
         const temp_2 = setTimeout(() => {

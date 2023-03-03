@@ -9,12 +9,12 @@ function setTabs() {
         e.stopPropagation();
 
         const parentTab = e.target.parentElement.parentElement.parentElement;
-        parentTab.querySelector(".nav-tabs .active").classList.remove("active");
-        e.target.parentElement.classList.add("active");
+        parentTab.querySelector(".nav-tabs .active")?.classList.remove("active");
+        e.target.parentElement?.classList.add("active");
         parentTab
           .querySelector(".tab-content .active")
-          .classList.remove("active");
-        parentTab.querySelector(e.target.className).classList.add("active");
+          ?.classList.remove("active");
+        parentTab.querySelector(e.target.className)?.classList.add("active");
 
         return false;
       });

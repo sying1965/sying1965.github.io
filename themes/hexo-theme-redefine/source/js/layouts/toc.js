@@ -34,7 +34,7 @@ function initTOC() {
               scrollTop: offset - 10,
               complete: function () {
                 setTimeout(() => {
-                  REDEFINE.utils.pageTop_dom.classList.add('hide');
+                  REDEFINE.utils.pageTop_dom?.classList.add('hide');
                 }, 100)
               }
             });
@@ -48,14 +48,14 @@ function initTOC() {
       activateTOCLink(index) {
         const target = document.querySelectorAll('.post-toc li a.nav-link')[index];
 
-        if ( (!target || target.classList.contains('active-current')) ) {
+        if ( (!target || target?.classList.contains('active-current')) ) {
           return;
         }
 
         document.querySelectorAll('.post-toc .active').forEach(element => {
-          element.classList.remove('active', 'active-current');
+          element?.classList.remove('active', 'active-current');
         });
-        target.classList.add('active', 'active-current');
+        target?.classList.add('active', 'active-current');
         // Scrolling to center active TOC element if TOC content is taller then viewport.
         const tocElement = document.querySelector('.post-toc-wrap');
         window.anime({
